@@ -11,5 +11,5 @@ compile by `go build`
 
 ## Usage
 ./gromfixer -volume <PATH> -action <ACTION>
-PATH - path to mounted usb
-ACTION - `clean` to clean from trash files or `fix` to clean from trash files and fix filenames
+- PATH - path to mounted usb
+- ACTION - `clean` to clean from trash files or `fix` to clean from trash files and fix filenames
