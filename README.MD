@@ -1,4 +1,4 @@
-# GROMAUDIO FILENAMES FIXER
+# Gromaudio usb dongle filenames fixer 
 
 ## Description
 
