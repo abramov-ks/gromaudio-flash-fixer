@@ -1,5 +1,7 @@
 # Gromaudio usb dongle filenames fixer 
 
+![Build](https://github.com/abramov-ks/gromaudio-flash-fixer/workflows/Build/badge.svg?branch=master)
+
 ## Description
 
 util for fixind filenames on USB dongle for GROMAUDIO USB3 dongle.
