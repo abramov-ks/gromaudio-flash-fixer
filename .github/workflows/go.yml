@@ -1,5 +1,4 @@
 # .github/workflows/release.yaml
-
 on: release
 name: Build
 jobs:
