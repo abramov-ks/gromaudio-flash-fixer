@@ -4,11 +4,14 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"math"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
 // is item in array
@@ -116,6 +119,19 @@ func scanDir(path string, action string, level int) {
 					if matched != true {
 						renameFile(f.Name(), files, path)
 					}
+				}
+
+			} else if action == "split" {
+
+				if isMusicFile(f.Name()) == true && isAllowedFile(f.Name()) == true {
+					cmd := exec.Command("ffmpeg", "-i", path+"/"+f.Name(), "-f", "segment", "-segment_time", "300", "-acodec", "copy", path+"/"+strings.TrimSuffix(f.Name(), filepath.Ext(f.Name()))+"_%03d.mp3")
+
+					_, err := cmd.CombinedOutput()
+					if err != nil {
+						log.Fatalf("cmd.Run() failed with %s\n", err)
+					}
+					os.Remove(path + "/" + f.Name())
+					fmt.Println(path + "/" + f.Name() + " successfuly splited. Source deleted")
 				}
 
 			} else {

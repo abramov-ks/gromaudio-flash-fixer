@@ -12,6 +12,9 @@ This removes dumn files from macos and renames audio into `0001.mp3` format
 compile by `go build`
 
 ## Usage
-`./gromfixer -volume path -action clean|fix`
+`./gromfixer -volume path -action clean|fix|split`
 - `PATH` - path to mounted usb
-- `ACTION` - `clean` to clean from trash files or `fix` to clean from trash files and fix filenames
+- `ACTION` 
+- - `clean` to clean from trash files 
+- - `fix` to clean from trash files and fix filenames
+- - `split` split mp3 track in directory up to 5 min length tracks
